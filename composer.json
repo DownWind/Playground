@@ -1,0 +1,11 @@
+{
+    
+    "name": "DownWind/Playground",
+    "type": "project",
+    "description": "The Playground",
+    "require": {
+        "php": ">=5.5",
+        "zendframework/zendframework": "~2.5"
+    },
+    "minimum-stability": "stable"
+}
