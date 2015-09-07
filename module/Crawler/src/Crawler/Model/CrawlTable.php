@@ -23,4 +23,15 @@ class CrawlTable
         $resultSet = $this->_tableGateway->select(array ('user' => $userId));
         return $resultSet;
     }
+
+    public function saveCrawl($crawl)
+    {
+        $data = array(
+            'userid' => $crawl->userid,
+            'url' => $crawl->url,
+            'finding' => $crawl->finding,
+        );
+
+        $this->_tableGateway->insert($data);
+    }
 }

@@ -22,24 +22,33 @@ return array(
                 ),
             ),
             //route crawl
-            'crawl' => array(
+            'create' => array(
                     'type' => 'segment',
                     'options' => array(
-                            'route'    => '/crawl[:url]',
+                            'route'    => '/create[:url]',
                             'constraints' => array(
                                 'url' => 'http*',
                             ),
                             'defaults' => array(
                                     'controller' => 'Crawler\Controller\Crawler',
-                                    'action'     => 'crawl',
+                                    'action'     => 'create',
                             ),
                     ),
             ),
-            // The following is a route to simplify getting started creating
-            // new controllers and actions without needing to create a new
-            // module. Simply drop new controllers in, and you can access them
-            // using the path /application/:controller/:action
-
+            //route delete
+            'delete' => array(
+                    'type' => 'segment',
+                    'options' => array(
+                            'route'    => '/delete[:url]',
+                            'constraints' => array(
+                                    'url' => 'http*',
+                            ),
+                            'defaults' => array(
+                                    'controller' => 'Crawler\Controller\Crawler',
+                                    'action'     => 'delete',
+                            ),
+                    ),
+            ),
             //maybe fall back to this one ? instead of building specifics like above
             /*
             'application' => array(
@@ -107,8 +116,11 @@ return array(
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/Crawler/layout/layout.phtml',
             'crawler/crawler/index' => __DIR__ . '/../view/Crawler/index/index.phtml',
+            'crawler/crawler/create' => __DIR__ . '/../view/Crawler/index/create.phtml',
             'error/404'               => __DIR__ . '/../view/Crawler/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/Crawler/error/index.phtml',
+            'zfc-user' => __DIR__ . '/../view',
+
         ),
 
         'template_path_stack' => array(
